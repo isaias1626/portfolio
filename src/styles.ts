@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
+import { Theme } from './themes/dark'
+
 const EstiloGlobal = createGlobalStyle`
   * {
     margin: 0;
@@ -7,11 +9,22 @@ const EstiloGlobal = createGlobalStyle`
     box-sizing:border-box;
     font-family: "Inter", sans-serif;
     list-style: none;
+    animation: fadeIn 1s linear;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   }
 
     body {
       padding-top: 80px;
       padding-bottom: 80px;
+      background-color: ${(props) => (props.theme as Theme).corDeFundo};
 
       @media (max-width: 768px) {
         padding-top: 16px;

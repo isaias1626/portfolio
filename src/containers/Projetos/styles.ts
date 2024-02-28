@@ -10,5 +10,15 @@ export const Lista = styled.ul`
     grid-template-columns: 1fr;
     column-gap: 0;
     row-gap: 16px;
+    animation: fadeIn 2s linear;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 `

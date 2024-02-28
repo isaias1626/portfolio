@@ -2,9 +2,16 @@ import Avatar from '../../components/Avatar'
 import Paragrafo from '../../components/Paragrafo'
 import Titulo from '../../components/Titulo'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+
 import { Descricao, BotaoTema, SidebarContainer } from './styles'
 
-const Sidebar = () => (
+type Props = {
+  trocaTema: () => void
+}
+
+const Sidebar = (props: Props) => (
   <aside>
     <SidebarContainer>
       <Avatar />
@@ -15,7 +22,10 @@ const Sidebar = () => (
       <Descricao tipo="principal" fontSize={12}>
         Desenvolvedor Full-Stack
       </Descricao>
-      <BotaoTema>Trocar tema</BotaoTema>
+      <BotaoTema onClick={props.trocaTema}>
+        <FontAwesomeIcon icon={faSun} /> &nbsp;| &nbsp;
+        <FontAwesomeIcon icon={faMoon} />
+      </BotaoTema>
     </SidebarContainer>
   </aside>
 )
